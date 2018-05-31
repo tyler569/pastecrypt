@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Theoretically all you need to do to get started as far as I know:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `sudo apt install ruby ruby-dev sqlite3 libsqlite3-dev zlibs1-dev`
+- `gem install rails` or `gem install --user-install rails`
+- `git clone <this repo>`
+- `cd pastecrypt`
+- `bundle install` or `bundle install --path vendor/bundle`
+- `rake db:migrate`
+- `rails server`
