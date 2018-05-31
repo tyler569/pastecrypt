@@ -7,5 +7,5 @@ Theoretically all you need to do to get started as far as I know:
 - `git clone <this repo>`
 - `cd pastecrypt`
 - `bundle install` or `bundle install --path vendor/bundle`
-- `rake db:migrate`
+- `rake db:schema:load`
 - `rails server`
