@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @paste.name %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @paste.data %>
+</p>
+
+<%= link_to 'Edit', edit_paste_path(@paste) %> |
+<%= link_to 'Back', pastes_path %>

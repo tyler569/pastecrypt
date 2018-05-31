@@ -1,0 +1,19 @@
+current directory: /home/pastecrypt/pastecrypt/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
+/usr/bin/ruby2.5 -r ./siteconf20180531-2783-1y39m3u.rb extconf.rb
+creating Makefile
+
+current directory: /home/pastecrypt/pastecrypt/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/pastecrypt/pastecrypt/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/pastecrypt/pastecrypt/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20180531-2783-akvxgu
