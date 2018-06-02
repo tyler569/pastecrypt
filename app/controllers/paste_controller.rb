@@ -1,2 +1,0 @@
-class PasteController < ApplicationController
-end

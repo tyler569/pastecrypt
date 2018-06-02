@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+
   <strong>Data:</strong>
-  <%= @paste.data %>
+  <br />
+  <%= safe_join(@paste.data.split(/\r?\n/), tag(:br)) %>
+
 </p>
 
 <%= link_to 'Edit', edit_paste_path(@paste) %> |
