@@ -4,5 +4,10 @@
 <%= render @paste, locals: { paste: @paste } %>
 
 <%= link_to 'Back', request.referer %>
-<%= link_to 'Edit', edit_paste_path(@paste) %>
-
+<% if logged_in? %>
+  <% if current_user == @paste.user %>
+    <%= link_to 'Edit', edit_paste_path(@paste) %>
+  <% end %>
+<% else %>
+  <%= link_to 'Log in to edit', login_path %>
+<% end %>
