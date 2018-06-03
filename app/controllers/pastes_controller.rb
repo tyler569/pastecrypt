@@ -26,14 +26,21 @@ class PastesController < ApplicationController
   def create
     @paste = Paste.new(paste_params)
 
-    respond_to do |format|
-      if @paste.save
-        format.html { redirect_to @paste, notice: 'Paste was successfully created.' }
-        format.json { render :show, status: :created, location: @paste }
-      else
-        format.html { render :new }
-        format.json { render json: @paste.errors, status: :unprocessable_entity }
-      end
+    if logged_in?
+      @paste.user = current_user
+    else
+      flash[:error] = "You are not logged in"
+      render 'new'
+    end
+
+    if @paste.save
+      # format.html { redirect_to @paste, notice: 'Paste was successfully created.' }
+      # format.json { render :show, status: :created, location: @paste }
+      redirect_to @paste
+    else
+      flash[:error] = @paste.errors.full_messages.join ", "
+      # format.html { render :new }
+      # format.json { render json: @paste.errors, status: :unprocessable_entity }
     end
   end
 

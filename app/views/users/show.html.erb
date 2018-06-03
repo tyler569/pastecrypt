@@ -1,2 +1,10 @@
 
-<%= @user.login_name %> <%= @user.email %>
+<%= @user.login_name %>
+<%= tag(:br) %>
+<%= @user.email %>
+<%= tag(:br) %>
+<%= link_to 'New paste', new_paste_path %>
+
+<% @user.pastes.each do |paste| %>
+  <%= render paste, locals: { paste: paste } %>
+<% end %>

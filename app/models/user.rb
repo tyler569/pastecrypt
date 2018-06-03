@@ -1,8 +1,11 @@
 class User < ApplicationRecord
 
+  has_many :pastes
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :login_name, presence: true
+  validates :login_name, presence: true,
+                         uniqueness: true
 
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
