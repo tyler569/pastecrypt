@@ -36,6 +36,7 @@ class PastesController < ApplicationController
     if @paste.save
       # format.html { redirect_to @paste, notice: 'Paste was successfully created.' }
       # format.json { render :show, status: :created, location: @paste }
+      flash[:notice] = "Paste created succesfully"
       redirect_to @paste
     else
       flash[:error] = @paste.errors.full_messages.join ", "

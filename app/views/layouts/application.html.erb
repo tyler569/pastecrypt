@@ -10,16 +10,7 @@
   </head>
 
   <body>
-
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-
-    <% if logged_in? then %>
-      <p>Welcome back, <%= link_to @current_user.login_name, @current_user %>
-      <%= link_to "Log out", logout_path, method: :delete %></p>
-    <% end %>
-      
+    <%= render 'layouts/header' %>
 
     <%= yield %>
 
