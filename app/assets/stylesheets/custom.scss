@@ -1,4 +1,43 @@
 
-.paste {
+td.paste {
     padding: 0;
+    background: #fafafa;
+    font-family: monospace;
+    white-space: pre;
+    padding-left: 10px;
+}
+
+td.line-number {
+    padding: 0;
+    background: #f0f0f0;
+    font-family: monospace;
+    white-space: pre;
+    width: 2em;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: right;
+}
+
+td.line-number::before {
+    content: attr(data);
+}
+
+
+p.paste-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table {
+    table-layout: fixed;
+    width: 90%;
+}
+
+input.paste-title {
+    width: 50%;
+}
+
+textarea.paste {
+    width: 50%;
+    height: 300px;
 }

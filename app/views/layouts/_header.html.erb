@@ -1,13 +1,16 @@
 
 <!-- "Header" -->
+<p>
 <% if logged_in? then %>
-  <p>Welcome back, 
-  <%= link_to @current_user.login_name, @current_user %>. 
+  Welcome back, 
+  <%= link_to @current_user.login_name, profile_path %>. 
   <%= link_to "Home", root_url %> 
   <%= link_to "New paste", new_paste_path %> 
   <%= link_to "Log out", logout_path, method: :delete %></p>
 <% else %>
-  <%= link_to "Home", root_url %> 
-  <%= link_to "Log in", login_path %></p>
+  <%= link_to "Home", root_url %>
+  <%= link_to "Log in", login_path %>
+  <%= link_to "Sign up", signup_path %>
 <% end %>
+</p>
 

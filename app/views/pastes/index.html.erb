@@ -2,26 +2,15 @@
 
 <h1>Pastes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @pastes.each do |paste| %>
+  <%= render paste, locals: { paste: paste } %>
+  <%= link_to 'View', paste_path(paste) %>
+  <%= tag :br %>
+  <%= tag :br %>
+<% end %>
 
-  <tbody>
-    <% @pastes.each do |paste| %>
-      <tr>
-        <td><%= paste.data %></td>
-        <td><%= link_to 'Show', paste %></td>
-        <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
-        <td><%= link_to 'Destroy', paste, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= tag :br %>
 
-<br>
-
-<%= link_to 'New Paste', new_paste_path %>
+<% if !logged_in? %>
+  <%= link_to 'Log in to paste', login_path %>
+<% end %>

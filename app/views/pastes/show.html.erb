@@ -1,11 +1,8 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<%= render @paste, locals: { paste: @paste } %>
 
-  <strong>Data:</strong>
-  <br />
-  <%= safe_join(@paste.data.split(/\r?\n/), tag(:br)) %>
+<%= link_to 'Back', request.referer %>
+<%= link_to 'Edit', edit_paste_path(@paste) %>
 
-</p>
-
-<%= link_to 'Edit', edit_paste_path(@paste) %> |

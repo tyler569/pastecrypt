@@ -7,5 +7,10 @@
 <h3>Existing pastes:</h3>
 <% @user.pastes.each do |paste| %>
   <%= render paste, locals: { paste: paste } %>
+  <%= link_to "View", paste_path(paste) %>
   <%= link_to "Edit", edit_paste_path(paste) %>
+  <%= link_to "Delete", paste_path(paste), method: :delete, 
+    data: { confirm: "Are you sure you want to delete paste ##{paste.id}?" } %>
+  <%= tag :br %>
+  <%= tag :br %>
 <% end %>

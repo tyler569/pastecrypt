@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'paste-title' %>
+  </div>
+
+  <div class="field">
     <%= form.label :data %>
-    <%= form.text_area :data %>
+    <%= form.text_area :data, class: 'paste' %>
   </div>
 
   <div class="actions">

@@ -63,10 +63,7 @@ class PastesController < ApplicationController
   # DELETE /pastes/1.json
   def destroy
     @paste.destroy
-    respond_to do |format|
-      format.html { redirect_to pastes_url, notice: 'Paste was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to request.referer
   end
 
   private
@@ -77,6 +74,6 @@ class PastesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paste_params
-      params.require(:paste).permit(:name, :data)
+      params.require(:paste).permit(:title, :data)
     end
 end

@@ -1,8 +1,13 @@
 
-<p><strong>Paste:</strong></p>
-<table class="paste">
-  <% paste.data.split("\n").each do |line| %>
-    <tr><td class="paste"><%= line %></td></tr>
+<% if !paste.title.nil? %>
+  <% if !paste.title.empty? %>
+    <p class="paste-title"><strong>Title:</strong> <%= paste.title %></p>
   <% end %>
+<% end %>
+<p class="paste-title"><strong>Data:</strong></p>
+<table>
+<% paste.data.split("\n").each_with_index do |line, ix| %>
+  <tr><td class="line-number" data="<%= ix %>"></td><td class="paste"><%= line %></tr></td>
+<% end %>
 </table>
 
